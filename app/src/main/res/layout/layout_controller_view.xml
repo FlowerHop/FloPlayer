@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="#551c1c1c">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:00" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/currTimeText"
+        app:layout_constraintEnd_toStartOf="@id/totalTimeText"
+        app:layout_constraintStart_toEndOf="@id/currTimeText"
+        app:layout_constraintTop_toTopOf="@id/currTimeText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/totalTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:00" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/iconSkipPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_skip_previous"
+        app:layout_constraintEnd_toStartOf="@+id/iconReplay10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currTimeText" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/iconReplay10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_replay_10"
+        app:layout_constraintEnd_toStartOf="@+id/iconPlayPause"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iconSkipPrevious"
+        app:layout_constraintTop_toBottomOf="@id/currTimeText" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/iconPlayPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_play"
+        app:layout_constraintEnd_toStartOf="@id/iconForward10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/iconReplay10"
+        app:layout_constraintTop_toBottomOf="@id/currTimeText" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/iconForward10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_forward_10"
+        app:layout_constraintEnd_toStartOf="@+id/iconSkipNext"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iconPlayPause"
+        app:layout_constraintTop_toBottomOf="@id/currTimeText" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/iconSkipNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_skip_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iconForward10"
+        app:layout_constraintTop_toBottomOf="@id/currTimeText" />
+
+
+</merge>

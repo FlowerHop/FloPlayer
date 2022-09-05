@@ -1,11 +1,9 @@
 package com.example.floplayer
 
-import android.content.ContentResolver
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
@@ -24,17 +22,6 @@ class HomeViewModel(
                 videoRepository.fetchVideos()
             )
             isLoading = false
-        }
-    }
-
-    fun scrollToLoadMoreIfNeed(position: Int) {
-        if (isLoading) return
-        if (position > videoList.value!!.size - 20) {
-            isLoading = true
-            viewModelScope.launch {
-                _videoList.postValue(_videoList.value !! + videoRepository.fetchVideos())
-                isLoading = false
-            }
         }
     }
 }
